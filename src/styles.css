@@ -1,0 +1,225 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Rashid Salon & Academy design system.
+ *
+ * Palette is named after the literal artefacts of a colorist's craft:
+ * Stone (plaster wall), Espresso (warm near-black), Copper Pigment,
+ * Plum Pigment, Brass Thread (academy badges only), Sage Mist (quiet support).
+ *
+ * Type: Fraunces (display serif w/ personality), Inter (body grotesk),
+ * JetBrains Mono (curriculum module numbers, fees, durations).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-stone-paper: var(--stone-paper);
+  --color-espresso: var(--espresso);
+  --color-copper: var(--copper);
+  --color-plum: var(--plum);
+  --color-brass: var(--brass);
+  --color-sage: var(--sage);
+
+  --color-chart-1: var(--copper);
+  --color-chart-2: var(--plum);
+  --color-chart-3: var(--brass);
+  --color-chart-4: var(--sage);
+  --color-chart-5: var(--espresso);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Brand palette — literal hex values, then mirrored into oklch tokens */
+  --stone-paper: #ece6dc;
+  --espresso: #2b2420;
+  --copper: #b5572a;
+  --plum: #5b2333;
+  --brass: #8c7a4b;
+  --sage: #818c78;
+
+  --background: #ece6dc;
+  --foreground: #2b2420;
+  --card: #f4efe7;
+  --card-foreground: #2b2420;
+  --popover: #f4efe7;
+  --popover-foreground: #2b2420;
+  --primary: #2b2420;
+  --primary-foreground: #ece6dc;
+  --secondary: #e1d9cb;
+  --secondary-foreground: #2b2420;
+  --muted: #e1d9cb;
+  --muted-foreground: #6b5f55;
+  --accent: #b5572a;
+  --accent-foreground: #ece6dc;
+  --destructive: #8c2a1a;
+  --destructive-foreground: #ece6dc;
+  --border: #d6cdbc;
+  --input: #d6cdbc;
+  --ring: #b5572a;
+
+  --sidebar: #2b2420;
+  --sidebar-foreground: #ece6dc;
+  --sidebar-primary: #b5572a;
+  --sidebar-primary-foreground: #ece6dc;
+  --sidebar-accent: #3a322d;
+  --sidebar-accent-foreground: #ece6dc;
+  --sidebar-border: #3a322d;
+  --sidebar-ring: #b5572a;
+}
+
+.dark {
+  --background: #1c1815;
+  --foreground: #ece6dc;
+  --card: #2b2420;
+  --card-foreground: #ece6dc;
+  --popover: #2b2420;
+  --popover-foreground: #ece6dc;
+  --primary: #ece6dc;
+  --primary-foreground: #2b2420;
+  --secondary: #3a322d;
+  --secondary-foreground: #ece6dc;
+  --muted: #3a322d;
+  --muted-foreground: #b8ac9d;
+  --accent: #b5572a;
+  --accent-foreground: #ece6dc;
+  --border: #3a322d;
+  --input: #3a322d;
+  --ring: #b5572a;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Decorative rule used in section labels */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--copper);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* === Ticket stub card === */
+@utility ticket {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--background);
+    border: 1px solid var(--border);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &::before {
+    left: -8px;
+  }
+  &::after {
+    right: -8px;
+  }
+}
+
+@utility ticket-dashed {
+  border-top: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border);
+}
+
+@utility pigment-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.55rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--foreground);
+}
