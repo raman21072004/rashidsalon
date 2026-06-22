@@ -33,8 +33,7 @@ export default defineConfig({
       },
     }),
     viteReact(),
-    // Plain Node.js production server — works anywhere Node runs,
-    // no Cloudflare/Vercel/edge-runtime account or CLI required.
-    nitro({ preset: "node-server" }),
+    // Plain Node.js production server by default, but switches to Vercel preset when building on Vercel.
+    nitro({ preset: process.env.VERCEL ? "vercel" : "node-server" }),
   ],
 });
