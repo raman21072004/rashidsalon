@@ -59,7 +59,7 @@ function Analytics() {
   return (
     <div>
       <PageHeader eyebrow="Insight" title="Analytics" />
-      <div className="px-8 pb-10 grid lg:grid-cols-2 gap-6">
+      <div className="px-5 pb-8 md:px-8 md:pb-10 grid lg:grid-cols-2 gap-6">
         <div className="bg-background border border-border p-5">
           <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground mb-4">
             By month

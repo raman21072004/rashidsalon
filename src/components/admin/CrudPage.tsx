@@ -91,7 +91,7 @@ export function CrudPage({
           </button>
         }
       />
-      <div className="px-8 pb-10">
+      <div className="px-5 pb-8 md:px-8 md:pb-10">
         <div className="bg-background border border-border overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-card">
@@ -204,11 +204,11 @@ function Editor({
   const set = (k: string, v: unknown) => setRow((r) => ({ ...r, [k]: v }));
 
   return (
-    <div className="fixed inset-0 z-50 bg-espresso/60 backdrop-blur-sm grid place-items-center p-4 overflow-y-auto">
-      <div className="bg-background border border-border w-full max-w-2xl my-8">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-          <h2 className="font-display text-2xl">{title}</h2>
-          <button onClick={onClose} className="p-2 hover:text-copper">
+    <div className="fixed inset-0 z-50 bg-espresso/60 backdrop-blur-sm grid place-items-center p-3 md:p-4 overflow-y-auto">
+      <div className="bg-background border border-border w-full max-w-2xl my-4 md:my-8">
+        <div className="flex items-center justify-between px-4 py-3 md:px-6 md:py-4 border-b border-border">
+          <h2 className="font-display text-xl md:text-2xl">{title}</h2>
+          <button onClick={onClose} className="p-2 hover:text-copper cursor-pointer">
             <X className="h-4 w-4" />
           </button>
         </div>
@@ -217,7 +217,7 @@ function Editor({
             e.preventDefault();
             onSave(row);
           }}
-          className="p-6 space-y-4 max-h-[70vh] overflow-y-auto"
+          className="p-4 md:p-6 space-y-4 max-h-[75vh] overflow-y-auto"
         >
           {fields.map((f) => (
             <div key={f.key}>

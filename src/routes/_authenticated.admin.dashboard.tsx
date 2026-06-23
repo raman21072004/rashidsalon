@@ -32,7 +32,7 @@ function Dashboard() {
   return (
     <div>
       <PageHeader eyebrow="Overview" title="Dashboard" />
-      <div className="px-8 pb-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="px-5 pb-8 md:px-8 md:pb-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map(({ key, label, icon: Icon, copper }) => (
           <div key={key} className="bg-background border border-border p-5">
             <div className="flex items-center justify-between">

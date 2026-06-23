@@ -41,14 +41,14 @@ function AdminsPage() {
   return (
     <div>
       <PageHeader eyebrow="Access" title="Admin accounts" />
-      <div className="px-8 pb-10 space-y-3 max-w-3xl">
+      <div className="px-5 pb-8 md:px-8 md:pb-10 space-y-3 max-w-3xl">
         {!isSuper && (
           <p className="text-sm text-muted-foreground">
             Only super admins can manage other accounts.
           </p>
         )}
-        <div className="bg-background border border-border">
-          <table className="w-full text-sm">
+        <div className="bg-background border border-border overflow-x-auto">
+          <table className="w-full text-sm min-w-[500px]">
             <thead className="bg-card">
               <tr>
                 <th className="text-left px-4 py-3 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">

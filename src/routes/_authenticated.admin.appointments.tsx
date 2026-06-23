@@ -85,7 +85,7 @@ function AppointmentsAdmin() {
   return (
     <div>
       <PageHeader eyebrow="Bookings" title="Appointments" />
-      <div className="px-8 pb-4 flex flex-wrap gap-3">
+      <div className="px-5 pb-4 md:px-8 flex flex-wrap gap-3">
         <input
           placeholder="Search name, phone, email…"
           value={q}
@@ -105,7 +105,7 @@ function AppointmentsAdmin() {
           ))}
         </select>
       </div>
-      <div className="px-8 pb-10">
+      <div className="px-5 pb-8 md:px-8 md:pb-10">
         <div className="bg-background border border-border overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-card">

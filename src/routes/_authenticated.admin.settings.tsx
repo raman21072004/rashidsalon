@@ -77,13 +77,13 @@ function SettingsAdmin() {
         }
       />
 
-      <div className="px-8">
-        <div className="flex gap-1 border-b border-border">
+      <div className="px-5 md:px-8">
+        <div className="flex gap-1 border-b border-border overflow-x-auto whitespace-nowrap no-scrollbar">
           {TABS.map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
-              className={`px-4 py-2.5 text-xs font-mono uppercase tracking-[0.14em] border-b-2 -mb-px ${tab === t ? "border-copper text-copper" : "border-transparent text-muted-foreground hover:text-foreground"}`}
+              className={`px-4 py-2.5 text-xs font-mono uppercase tracking-[0.14em] border-b-2 -mb-px shrink-0 ${tab === t ? "border-copper text-copper" : "border-transparent text-muted-foreground hover:text-foreground"}`}
             >
               {t}
             </button>
@@ -91,7 +91,7 @@ function SettingsAdmin() {
         </div>
       </div>
 
-      <div className="px-8 py-8 max-w-3xl space-y-4">
+      <div className="px-5 py-6 md:px-8 md:py-8 max-w-3xl space-y-4">
         {tab === "General" && (
           <>
             <Input label="Salon name" k="salon_name" v={form} set={set} />

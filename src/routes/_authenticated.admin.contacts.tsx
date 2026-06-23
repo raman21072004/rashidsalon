@@ -42,7 +42,7 @@ function ContactsAdmin() {
   return (
     <div>
       <PageHeader eyebrow="Inbox" title="Contact messages" />
-      <div className="px-8 pb-10 space-y-3">
+      <div className="px-5 pb-8 md:px-8 md:pb-10 space-y-3">
         {data.length === 0 && <p className="text-muted-foreground text-sm">No messages yet.</p>}
         {data.map((m) => {
           const v = m as Record<string, string | boolean>;
@@ -51,7 +51,7 @@ function ContactsAdmin() {
               key={String(v.id)}
               className={`bg-background border p-5 ${v.resolved ? "border-border opacity-60" : "border-copper/40"}`}
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                 <div className="min-w-0">
                   <div className="flex items-center gap-3 flex-wrap">
                     <span className="font-display text-lg">{v.name}</span>

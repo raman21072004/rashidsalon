@@ -10,12 +10,12 @@ export function PageHeader({
   action?: ReactNode;
 }) {
   return (
-    <header className="px-8 pt-10 pb-6 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
+    <header className="px-5 pt-6 pb-4 md:px-8 md:pt-10 md:pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
       <div className="min-w-0">
         {eyebrow && <div className="eyebrow">{eyebrow}</div>}
-        <h1 className="mt-2 font-display text-4xl truncate">{title}</h1>
+        <h1 className="mt-1 font-display text-3xl md:text-4xl truncate">{title}</h1>
       </div>
-      <div className="shrink-0">{action}</div>
+      {action && <div className="shrink-0">{action}</div>}
     </header>
   );
 }
